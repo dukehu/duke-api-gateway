@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 9999
   context-path: /
 
 security:
@@ -10,6 +10,10 @@ security:
     enabled: true
 
 management:
-    security:
-        enabled: false
-    context-path: /management
+  security:
+    enabled: false
+  context-path: /management
+
+logging:
+  file: ./logs/gateway.log
+  level: debug
