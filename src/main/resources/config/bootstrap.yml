@@ -1,4 +1,23 @@
 spring:
-    application:
-        name: duke-api-gateway
+  application:
+    name: duke-api-gateway
 
+eureka:
+  dashboard:
+    path: /
+  instance:
+    hostname: ${spring.application.name}
+    appname: ${spring.application.name}
+    instance-id: ${spring.application.name}(${spring.cloud.client.ipAddress}:${server.port}) #注册到注册中心的实例id
+    prefer-ip-address: true  #是否使用ip地址
+    lease-renewal-interval-in-seconds: 5 #租期更新时间间隔（默认30秒）
+    lease-expiration-duration-in-seconds: 10  #服务失效时间
+    health-check-url-path: /${management.context-path:/management}/health #健康状态监控地址
+    status-page-url-path: /${management.context-path:/management}/info #信息监控地址
+  client:
+    fetch-registry: true
+    register-with-eureka: false
+    instance-info-replication-interval-seconds: 10   #实例信息复制间隔
+    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: http://${security.user.name:duke}:${security.user.password:duke}@localhost:${server.port:8761}/eureka/

@@ -4,10 +4,10 @@ server:
 
 security:
   user:
-    password: duke123
     name: duke
+    password: duke
   basic:
-    enabled: false
+    enabled: true
 
 management:
     security:
