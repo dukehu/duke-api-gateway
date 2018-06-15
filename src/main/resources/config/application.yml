@@ -7,7 +7,7 @@ security:
     name: duke
     password: duke
   basic:
-    enabled: true
+    enabled: false
 
 management:
   security:
@@ -17,3 +17,10 @@ management:
 logging:
   file: ./logs/gateway.log
   level: debug
+
+zuul:
+  retryable: true #开启zuul的重试，默认为false
+  routes:
+    duke-blog:
+      url: http://127.0.0.1:1111/
+      path: /api/blog/**
