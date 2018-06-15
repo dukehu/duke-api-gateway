@@ -1,0 +1,15 @@
+server:
+  port: 8888
+  context-path: /
+
+security:
+  user:
+    password: duke123
+    name: duke
+  basic:
+    enabled: false
+
+management:
+    security:
+        enabled: false
+    context-path: /management
