@@ -21,8 +21,8 @@ debug: true
 
 duke.swagger:
   enabled: true #开启swagger,默认为开启
-  title: 网关
-  description:
+  title: gateway api
+  description: 网关项目服务
   version:
   termsOfServiceUrl:
   license:
