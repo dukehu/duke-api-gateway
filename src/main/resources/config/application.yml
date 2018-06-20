@@ -17,10 +17,25 @@ management:
 logging:
   file: ./logs/gateway.log
   level: debug
+debug: true
+
+duke.swagger:
+  enabled: true #开启swagger,默认为开启
+  title: 网关
+  description:
+  version:
+  termsOfServiceUrl:
+  license:
+  licenseUrl:
+  basePackage: com.duke.framework.gateway
 
 zuul:
   retryable: true #开启zuul的重试，默认为false
+  ignored-services: "*"
   routes:
     duke-blog:
       url: http://127.0.0.1:1111/
       path: /api/blog/**
+    duke-storage:
+      url: http://127.0.0.1:2222/
+      path: /api/storage/**
