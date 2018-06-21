@@ -39,3 +39,6 @@ zuul:
     duke-storage:
       url: http://127.0.0.1:2222/
       path: /api/storage/**
+    duke-auth:
+      url: http://127.0.0.1:10000/
+      path: /api/auth/**
