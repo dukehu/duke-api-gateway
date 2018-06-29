@@ -19,28 +19,29 @@ logging:
   level: debug
 debug: true
 
-duke.swagger:
-  enabled: true #开启swagger,默认为开启
-  title: gateway api
-  description: 网关项目服务
-  version:
-  termsOfServiceUrl:
-  license:
-  licenseUrl:
-  basePackage: com.duke.framework.gateway
+duke:
+  swagger:
+    enabled: true #开启swagger,默认为开启
+    title: gateway api
+    description: 网关项目服务
+    version:
+    termsOfServiceUrl:
+    license:
+    licenseUrl:
+    basePackage: com.duke.framework.gateway
 
 zuul:
   retryable: true #开启zuul的重试，默认为false
   ignored-services: "*"
   routes:
     duke-auth:
-      url: http://127.0.0.1:6666/
-      path: /api/auth/**
+#      url: http://127.0.0.1:6666/
+#      path: /api/auth/**
 #    duke-storage:
 #      url: http://127.0.0.1:5286/
 #      path: /api/storage/**
     duke-blog:
-      url: http://127.0.0.1:5287/
+      url: http://127.0.0.1:5286/
       path: /api/blog/**
 #    duke-comment:
 #      url: http://127.0.0.1:5288/
