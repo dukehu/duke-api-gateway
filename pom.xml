@@ -6,6 +6,7 @@
 
     <artifactId>duke-api-gateway</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <parent>
         <artifactId>duke-parent</artifactId>
@@ -14,6 +15,9 @@
         <relativePath/>
     </parent>
 
+    <properties>
+        <main-class>com.duke.framework.gateway.GatewayApplication</main-class>
+    </properties>
 
     <dependencies>
         <!--zuul依赖-->
@@ -60,5 +64,14 @@
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
