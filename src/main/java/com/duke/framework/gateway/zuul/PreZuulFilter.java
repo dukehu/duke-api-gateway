@@ -46,8 +46,7 @@ public class PreZuulFilter extends ZuulFilter {
 
         HttpServletRequest request = requestContext.getRequest();
         HttpServletResponse response = requestContext.getResponse();
-
-        // todo 后期将WebUtils提到duke-framework里面
+        // 从请求中获取access_token
         String accessToken = WebUtils.extract(request, "access_token");
 
         if (!ObjectUtils.isEmpty(accessToken)) {
