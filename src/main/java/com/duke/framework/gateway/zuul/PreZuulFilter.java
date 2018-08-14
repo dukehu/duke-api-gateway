@@ -62,7 +62,7 @@ public class PreZuulFilter extends ZuulFilter {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }else{
+            } else {
                 requestContext.addZuulRequestHeader("Authorization", "Bearer" + " " + accessToken);
             }
         } else {
