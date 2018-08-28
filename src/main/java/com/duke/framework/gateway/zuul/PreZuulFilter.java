@@ -1,5 +1,6 @@
 package com.duke.framework.gateway.zuul;
 
+import com.duke.framework.CoreConstants;
 import com.duke.framework.gateway.utils.WebUtils;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
@@ -47,8 +48,8 @@ public class PreZuulFilter extends ZuulFilter {
         HttpServletRequest request = requestContext.getRequest();
         HttpServletResponse response = requestContext.getResponse();
         // 从请求中获取access_token
-        String accessToken = WebUtils.extract(request, "access_token");
-
+        String accessToken = WebUtils.extract(request, CoreConstants.ACCESS_TOKEN);
+        // todo 如果是不需要登陆的接口，直接放过
         if (!ObjectUtils.isEmpty(accessToken)) {
             // 需要登陆的接口
             if (checkRequestUrl(request)) {
