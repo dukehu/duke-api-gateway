@@ -1,0 +1,21 @@
+zuul:
+  retryable: true # 开启zuul的重试，默认为false
+  ignored-services: "*"
+  sensitive-headers: "*"   # 不加这个的话zuul会把一些过敏信息给过滤掉，就不会把cookie给写到浏览器，https://blog.csdn.net/dyc87112/article/details/73739521
+  ignored-headers: "*"
+  routes:
+    duke-auth:
+      url: http://dukehu.top:5285/
+      path: /api/auth/**
+    duke-blog:
+      url: http://dukehu.top:5286/
+      path: /api/blog/**
+    duke-storage:
+      url: http://127.0.0.1:5287/
+      path: /api/storage/**
+#    duke-admin:
+#      url: http://127.0.0.1:5288/
+#      path: /api/admin/**
+#    duke-comment:
+#      url: http://127.0.0.1:5288/
+#      path: /api/comment/**

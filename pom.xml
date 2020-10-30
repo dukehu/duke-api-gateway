@@ -83,6 +83,29 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <!-- 指定打包后的名称，如：duke-blog-impl-1.0-SNAPSHOT-prod.war -->
+        <finalName>${artifactId}-${version}-${profileActive}</finalName>
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profileActive>dev</profileActive>
+                <openOfficeHome>C:\Program Files (x86)\OpenOffice 4</openOfficeHome>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profileActive>prod</profileActive>
+                <openOfficeHome>/opt/openoffice4</openOfficeHome>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>

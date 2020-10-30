@@ -1,6 +1,27 @@
+server:
+  port: 9000
+  context-path: /
+
 spring:
   application:
     name: duke-api-gateway
+  http:
+    multipart:
+      max-file-size: 500Mb      # Max file size，默认1M
+      max-request-size: 1000Mb   # Max request size，默认10M
+
+zuul:
+  host:
+    connect-timeout-millis: 100000
+    socket-timeout-millis: 600000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
 
 eureka:
   client:
@@ -9,7 +30,7 @@ eureka:
     fetch-registry: true #表示是否从Eureka Server获取注册信息，默认为true
     register-with-eureka: false #表示是否将自己注册到Eureka Server，默认为true。
     service-url:
-      defaultZone: http://${security.user.name:duke}:${security.user.password:duke}@localhost:8761/eureka
+      defaultZone: http://${security.user.name:duke}:${security.user.password:duke}@106.52.121.89:8761/eureka
   instance:
     hostname: ${spring.application.name}
     appname: ${spring.application.name}
