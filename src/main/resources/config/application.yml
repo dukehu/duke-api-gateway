@@ -7,10 +7,6 @@ security:
     password: duke
   basic:
     enabled: false
-  oauth2:
-    resource:
-      service-id: duke-auth
-      user-info-uri: http://dukehu.top:5285/user
 
 
 management:

@@ -1,3 +1,9 @@
+security:
+  oauth2:
+    resource:
+      service-id: duke-auth
+      user-info-uri: http://127.0.0.1:5285/user
+
 zuul:
   retryable: true # 开启zuul的重试，默认为false
   ignored-services: "*"
@@ -5,17 +11,17 @@ zuul:
   ignored-headers: "*"
   routes:
     duke-auth:
-      url: http://dukehu.top:5285/
+      url: http://127.0.0.1:5285/
       path: /api/auth/**
     duke-blog:
-      url: http://dukehu.top:5286/
+      url: http://127.0.0.1:5286/
       path: /api/blog/**
     duke-storage:
       url: http://127.0.0.1:5287/
       path: /api/storage/**
-#    duke-admin:
-#      url: http://127.0.0.1:5288/
-#      path: /api/admin/**
+    duke-admin:
+      url: http://127.0.0.1:5288/
+      path: /api/admin/**
 #    duke-comment:
 #      url: http://127.0.0.1:5288/
 #      path: /api/comment/**

@@ -1,3 +1,9 @@
+security:
+  oauth2:
+    resource:
+      service-id: duke-auth
+      user-info-uri: http://dukehu.top:5285/user
+
 zuul:
   retryable: true # 开启zuul的重试，默认为false
   ignored-services: "*"
