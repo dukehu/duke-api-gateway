@@ -54,12 +54,11 @@ public class PreZuulFilter extends ZuulFilter {
             // 需要登陆的接口
             if (checkRequestUrl(request)) {
                 try {
-                    OAuth2Authentication auth = tokenServices.loadAuthentication(accessToken);
-
-                    if (auth != null) {
-                        requestContext.addZuulRequestHeader("Authorization", "Bearer" + " " + accessToken);
-                        return null;
-                    }
+//                    OAuth2Authentication auth = tokenServices.loadAuthentication(accessToken);
+//
+//                    if (auth != null) {
+//                        requestContext.addZuulRequestHeader("Authorization", "Bearer" + " " + accessToken);
+//                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
